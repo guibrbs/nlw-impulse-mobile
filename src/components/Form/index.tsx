@@ -5,6 +5,7 @@ import { theme } from '../../theme';
 import { FeedbackType } from '../Widget';
 import { styles } from './styles';
 import { feedbackTypes } from '../../utils/feedbackTypes'
+import { ScreenshotButton } from '../ScreenshotButton';
 
 interface Props{
     feedbackType: FeedbackType
@@ -31,6 +32,19 @@ export function Form({feedbackType}: Props) {
                     {feedbackTypeInfo.title}
                 </Text>
             </View>
+        </View>
+        <TextInput 
+            multiline
+            style={styles.input}
+            placeholder="Algo não está funcionando bem? Queremos corrigir. Conte com detalhes o que está acontecendo..."
+            placeholderTextColor={theme.colors.text_secondary}
+        />
+        <View style={styles.footer} >
+            <ScreenshotButton 
+                onTakeShot={() => {}}
+                onRemoveShot={() => {}}
+                screenshot=""
+            />
         </View>
     </View>
   );
