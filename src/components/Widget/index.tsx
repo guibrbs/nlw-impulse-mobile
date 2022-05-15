@@ -13,7 +13,6 @@ import { Success } from '../Success';
 export type FeedbackType = keyof typeof feedbackTypes
 
 function Widget() {
-
   const bottomSheetRef = useRef<BottomSheet>(null)
 
   function handleOpen(){
@@ -38,7 +37,9 @@ function Widget() {
         backgroundStyle={styles.modal}
         handleIndicatorStyle={styles.indicator}
       >
-        <Success />
+        <Form 
+          feedbackType='BUG'
+        />
       </BottomSheet>
     </>
   );
